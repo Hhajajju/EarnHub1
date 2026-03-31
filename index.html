@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <mcode" content="width=device-width, initial-scale=1.0">
-    <title>CashReward App</title>
+    <title>Earn Hub</title>
     
     <!-- Your Ad Code -->
     <script src='//libtl.com/sdk.js' data-zone='9391539' data-sdk='show_9391539'></script>
@@ -52,7 +52,7 @@
 
     <!-- Auth Section -->
     <div id="auth-section" class="min-h-screen p-6 flex-col justify-center main-page main-bg">
-        <h1 class="text-5xl font-extrabold text-center mb-2 accent-yellow">CashReward</h1>
+        <h1 class="text-5xl font-extrabold text-center mb-2 accent-yellow">EarnHub</h1>
         <p class="text-center text-gray-400 mb-8">Login or Signup to continue</p>
         <div id="auth-container">
             <div id="login-view">
@@ -73,7 +73,7 @@
 
     <!-- Main App -->
     <div id="app-container" class="min-h-screen flex-col main-page main-bg">
-        <header class="p-4 flex items-center justify-between"><div class="flex items-center space-x-3"><img src="https://placehold.co/50x50/facc15/1a1a1a?text=A" id="profile-picture" class="rounded-full border-2 border-yellow-400"><div><h2 class="font-semibold text-lg leading-tight" id="header-profile-name">Hi, Anonymously</h2><p class="text-gray-400 text-sm leading-tight">Welcome</p></div></div><div class="accent-yellow-bg text-black px-4 py-2 rounded-full font-bold flex items-center space-x-2"><span id="header-coin-balance">0</span><i data-lucide="coins" class="w-5 h-5"></i></div></header>
+        <header class="p-4 flex CashRewarustify-between"><div class="flex items-center space-x-3"><img src="https://placehold.co/50x50/facc15/1a1a1a?text=A" id="profile-picture" class="rounded-full border-2 border-yellow-400"><div><h2 class="font-semibold text-lg leading-tight" id="header-profile-name">Hi, Anonymously</h2><p class="text-gray-400 text-sm leading-tight">Welcome</p></div></div><div class="accent-yellow-bg text-black px-4 py-2 rounded-full font-bold flex items-center space-x-2"><span id="header-coin-balance">0</span><i data-lucide="coins" class="w-5 h-5"></i></div></header>
         <main class="flex-grow">
             <div id="back-button-container" class="hidden p-4"><button onclick="navigateTo('home-page')" class="flex items-center accent-yellow"><i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i><span>Back to Home</span></button></div>
             
@@ -434,7 +434,7 @@
                     if (seconds <= 0) {
                         clearInterval(interval);
                         document.getElementById('special-ad-timer-container').classList.add('hidden');
-                        document.getElementById('claim-special-ad-final-btn').classList.remove('hidden');
+                        document.getElementById('claim-special-ad-final-btn').classList.remove('hi'upi'n');
                         adStatus.textContent = "You can now claim your bonus!";
                     }
                 }, 1000);
@@ -578,7 +578,7 @@
                 .replace('{CODE}', userData.referralCode)
                 .replace('{APP_LINK}', window.location.href);
 
-            if (navigator.share) { navigator.share({ title: 'Join CashReward!', text: shareText }); } 
+            if (navigator.share) { navigator.share({ title: 'Join EarnHub!', text: shareText }); } 
             else { 
                 navigator.clipboard.writeText(shareText);
                 showAlert("Share feature not available. Link copied!"); 
@@ -589,7 +589,7 @@
             document.getElementById('wallet-coin-balance').textContent = userData.balance || 0;
             document.getElementById('coin-value-info').textContent = `${appConfig.coinValueCoins || 1000} Coins = â‚¹${appConfig.coinValueInr || 10}`;
             const methodSelect = document.getElementById('withdraw-method');
-            const paymentMethods = appConfig.paymentMethods || ["UPI", "Paytm"];
+            const paymentMethods = appConfig.paymentMethods || "Usdt (beb 20)","ToN"];
             
             methodSelect.innerHTML = paymentMethods.map(m => `<option value="${m}">${m}</option>`).join('');
             
@@ -597,9 +597,9 @@
             const updatePaymentDetails = () => {
                 const selectedMethod = methodSelect.value.toLowerCase();
                 let placeholder = "Enter Details";
-                if (selectedMethod.includes('upi')) placeholder = "Enter your UPI ID";
-                if (selectedMethod.includes('paytm')) placeholder = "Enter your Paytm Number";
-                if (selectedMethod.includes('paypal')) placeholder = "Enter your PayPal Email";
+                if (selectedMethod.includes('Usdt beb 20')) placeholder = "Enter your wallet address";
+                if (selectedMethod.include('Ton')) placeholder = "Enter your wallet address";
+                if (selectedMethod.include('Ltc')) placeholder = "Enter your wallet address";
                 paymentDetailsContainer.innerHTML = `<input type="text" placeholder="${placeholder}" class="w-full p-3 rounded-lg input-field">`;
             };
             methodSelect.addEventListener('change', updatePaymentDetails);
