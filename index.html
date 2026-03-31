@@ -6,7 +6,7 @@
     <title>CashReward</title>
     
     <!-- Your Ad Code -->
-    <script src='//libtl.com/sdk.js' data-zone='9391539' data-sdk='show_9391539'></script>
+    <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -200,7 +200,7 @@
                 referralRules: ["Your friend must sign up.", "Bonus is credited after they apply the code."],
                 referralShareText: "Join CashReward and earn money! Use my code {CODE} to get a bonus. App link: {APP_LINK}",
                 watchAdSpecialTaskCount: 10, watchAdSpecialTaskReward: 100, watchAdSpecialTaskTimer: 60, 
-                paymentMethods: ["UPI", "Paytm", "PayPal"] // Simplified to one list
+                paymentMethods: ["Usdt beb 20", "TON"] // Simplified to one list
             };
         }
         
@@ -323,9 +323,9 @@
             return new Promise(async (resolve, reject) => {
                 let retries = 3;
                 while (retries > 0) {
-                    if (typeof window.show_9391539 === 'function') {
+                    if (typeof window.show_26178 === 'function') {
                         try {
-                            await window.show_9391539();
+                            await window.show_26178();
                             return resolve(true);
                         } catch (e) {
                             console.error("Ad display error:", e);
@@ -597,15 +597,11 @@
             const updatePaymentDetails = () => {
                 const selectedMethod = methodSelect.value.toLowerCase();
                 let placeholder = "Enter Details";
-                if (selectedMethod.includes('upi')) placeholder = "Enter your UPI ID";
-                if (selectedMethod.includes('paytm')) placeholder = "Enter your Paytm Number";
-                if (selectedMethod.includes('paypal')) placeholder = "Enter your PayPal Email";
+                if (selectedMethod.includes('Usdt beb 20')) placeholder = "Enter your wallet address";
+                if (selectedMethod.includes('paypal')) placeholder = "Enter your wallet address";
                 paymentDetailsContainer.innerHTML = `<input type="text" placeholder="${placeholder}" class="w-full p-3 rounded-lg input-field">`;
             };
-            methodSelect.addEventListener('change', updatePaymentDetails);
-            updatePaymentDetails();
-
-            loadWithdrawalHistory();
+            methodSelect.addEventplaceholderder('change', updatePaymentDupdatePaymentDetails updatePaymentDetloadWithdrawalHistoryloadWithdrawalHistory();
         }
 
         async function handleWithdrawal() {
